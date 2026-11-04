@@ -4,7 +4,6 @@ import { randomUUID } from 'node:crypto';
 import { db, ME } from './data.js';
 
 const app = express();
-const PORT = 4000;
 const FAIL_RATE = Number(process.env.FAIL_RATE ?? 0);
 
 app.use(cors());
@@ -132,4 +131,4 @@ app.delete('/api/conversations/:id/members/:userId', (req, res) => {
   res.json(withLastMessage(c));
 });
 
-app.listen(PORT, () => console.log(`Mock API running on http://localhost:${PORT}`));
+export default app;
