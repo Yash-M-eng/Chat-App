@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-cream: #f2edd5;
+  --color-brand: #e7390d;
+  --color-accent: #f26716;
+  --color-forest: #084a24;
+  --color-deep: #04261e;
+}
+
+:root {
+  --app-bg: #f2edd5;
+  --panel-bg: #fbf8ec;
+  --hover-bg: #ebe4c6;
+  --text-main: #04261e;
+  --text-muted: #5f6f66;
+  --border: #e0d8b8;
+  --bubble-in: #ffffff;
+  --bubble-out: #084a24;
+  --field-bg: #ffffff;
+}
+
+.dark {
+  color-scheme: dark;
+  --app-bg: #04261e;
+  --panel-bg: #062f25;
+  --hover-bg: #0c3d30;
+  --text-main: #f2edd5;
+  --text-muted: #9fb3a6;
+  --border: #0f4334;
+  --bubble-in: #123f33;
+  --bubble-out: #0a5a2c;
+  --field-bg: #0c3d30;
+}
+
+@theme inline {
+  --color-app: var(--app-bg);
+  --color-panel: var(--panel-bg);
+  --color-hover: var(--hover-bg);
+  --color-main: var(--text-main);
+  --color-muted: var(--text-muted);
+  --color-line: var(--border);
+  --color-bubble-in: var(--bubble-in);
+  --color-bubble-out: var(--bubble-out);
+  --color-field: var(--field-bg);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--app-bg);
+  color: var(--text-main);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
