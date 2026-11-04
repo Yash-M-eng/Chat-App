@@ -4,7 +4,7 @@ import { randomUUID } from 'node:crypto';
 import { db, ME } from './data.js';
 
 const app = express();
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 const FAIL_RATE = Number(process.env.FAIL_RATE ?? 0);
 
 app.use(cors());
